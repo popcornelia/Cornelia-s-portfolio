@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cornelia Pop — B2B Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d1b22; --muted:#5f5b6a; --paper:#f7f4ef; --card:#ffffff;
+    --accent:#5b3fd6; --accent-soft:#ebe6ff; --line:#e4dfd6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px}
+  nav ul{display:flex;gap:28px;list-style:none;font-size:15px;color:var(--muted)}
+  nav a{text-decoration:none}
+  nav a:hover{color:var(--accent)}
+
+  .hero{padding:72px 0 88px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;margin-bottom:20px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:32px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:13px 22px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;background:none;font-family:inherit}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn:hover{transform:translateY(-1px)}
+  .stats{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:22px}
+  .stat b{font-family:Fraunces,serif;font-size:38px;font-weight:600;display:block;line-height:1}
+  .stat span{font-size:14px;color:var(--muted)}
+
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,serif;font-weight:600;font-size:32px;margin-bottom:12px}
+  .sub{color:var(--muted);margin-bottom:40px;max-width:560px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card .ico{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:18px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .timeline{display:grid;gap:0}
+  .row{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row .when{color:var(--muted);font-size:14px}
+  .row h3{font-size:17px}
+  .row p{color:var(--muted);font-size:15px}
+
+  .contact{background:var(--ink);color:#fff;border-radius:22px;padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .contact h2{color:#fff}
+  .contact p{color:#c9c4d6}
+  .contact .btn{border-color:#fff;color:#fff}
+  .note{display:none;margin-top:14px;font-size:14px;color:#cfc6ff}
+
+  footer{padding:36px 0;color:var(--muted);font-size:14px;text-align:center}
+
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr;padding:40px 0 56px}
+    .grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr;gap:4px}
+    nav ul{display:none}
+    .contact{padding:32px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Cornelia Pop</div>
+    <ul>
+      <li><a href="#services">What I do</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="tag">Test page · draft</span>
+      <h1>B2B marketing that turns <em>customer results</em> into stories people read.</h1>
+      <p class="lead">I help tech companies explain what they do — through LinkedIn campaigns, email, case studies and sales materials that get to the point.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Let's talk</a>
+        <a class="btn" href="#experience">See my work</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>4+</b><span>years in marketing & copywriting</span></div>
+      <div class="stat"><b>300+</b><span>client websites written for</span></div>
+      <div class="stat"><b>5</b><span>B2B newsletters run every week</span></div>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>What I do</h2>
+    <p class="sub">Three things, done well, with the bottom line first.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b3fd6" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg></div>
+        <h3>LinkedIn campaigns</h3>
+        <p>Content calendars, posts and paid campaigns aimed at the buyers who matter.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b3fd6" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <h3>Email marketing</h3>
+        <p>Newsletters and outreach sequences that people open, read and reply to.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b3fd6" stroke-width="2"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/></svg></div>
+        <h3>Case studies & sales materials</h3>
+        <p>Customer proof turned into articles, one-pagers and decks the sales team uses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">Content, email and social — across agencies, education and tech.</p>
+    <div class="timeline">
+      <div class="row"><div class="when">2026 – now</div><div><h3>B2B Marketing Specialist · Legentic</h3><p>LinkedIn, outreach, case studies and customer newsletters.</p></div></div>
+      <div class="row"><div class="when">2025 – 2026</div><div><h3>Social Media Specialist · Transylvania College</h3><p>Strategy and monthly calendars across four platforms; podcast coordination.</p></div></div>
+      <div class="row"><div class="when">2024 – 2025</div><div><h3>B2B Email Marketing Specialist · Mejix</h3><p>Weekly newsletters for 5 B2B clients.</p></div></div>
+      <div class="row"><div class="when">2024</div><div><h3>Creative Copywriter · GoDaddy</h3><p>SEO website copy for 300+ client sites.</p></div></div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-top:none">
+    <div class="contact">
+      <div>
+        <h2>Have a project in mind?</h2>
+        <p>Send a short note — I usually reply within a day.</p>
+        <p class="note" id="note">This is a test page — the button doesn't send anything yet.</p>
+      </div>
+      <button class="btn" onclick="document.getElementById('note').style.display='block'">Get in touch</button>
+    </div>
+  </section>
+
+  <footer>© 2026 Cornelia Pop · Test page</footer>
+</div>
+</body>
+</html>
