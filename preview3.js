@@ -1,0 +1,14 @@
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.2});els.forEach(function(el){io.observe(el)});}
+  else els.forEach(function(el){el.classList.add('in')});
+  var eyes=document.querySelector('.eyes');
+  if(eyes){var ps=eyes.querySelectorAll('.blink > g'),raf;window.addEventListener('pointermove',function(e){var r=eyes.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy)||1,m=Math.min(11,d/14);cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){var t='translate('+(dx/d*m).toFixed(1)+' '+(dy/d*m*.85).toFixed(1)+')';ps.forEach(function(p){p.setAttribute('transform',t)})});});}
+  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('main-nav');
+  if(btn&&nav)btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  var email="pop.cornelia06@gmail.com",sub="Marketing role: let's talk",body="Hi Cornelia,\n\nI saw your portfolio and I'd like to talk to you about a marketing role at [company name].\n\n[A few words about the role]\n\nWhen would be a good time for a short call?\n\nBest,\n[Your name]",en=encodeURIComponent;
+  var links=[["Your email app","mailto:"+email+"?subject="+en(sub)+"&body="+en(body),0],["Gmail","https://mail.google.com/mail/?view=cm&fs=1&to="+en(email)+"&su="+en(sub)+"&body="+en(body),1],["Outlook","https://outlook.live.com/mail/0/deeplink/compose?to="+en(email)+"&subject="+en(sub)+"&body="+en(body),1]];
+  document.querySelectorAll('.email-menu > button').forEach(function(b){var box=b.parentNode,pop=null;function close(){if(pop){pop.remove();pop=null;b.setAttribute('aria-expanded','false');}}
+    b.addEventListener('click',function(){if(pop){close();return;}pop=document.createElement('div');pop.className='email-pop';var h='<p class="email-pop-title">Open a ready-made email in</p>';links.forEach(function(l){h+='<a class="email-opt" href="'+l[1]+'"'+(l[2]?' target="_blank" rel="noopener noreferrer"':'')+'>'+l[0]+'</a>'});h+='<button type="button" class="email-opt">Copy address</button><p class="email-pop-addr">'+email+'</p>';pop.innerHTML=h;box.appendChild(pop);b.setAttribute('aria-expanded','true');var cb=pop.querySelector('button');cb.addEventListener('click',function(){try{navigator.clipboard.writeText(email).then(function(){cb.textContent='Copied!'},function(){cb.textContent=email})}catch(x){cb.textContent=email}})});
+    document.addEventListener('pointerdown',function(ev){if(pop&&!box.contains(ev.target))close()});document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close()});});
+})();
